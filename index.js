@@ -20,12 +20,21 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(function(res, req, next) {
+    console.log("i am in middle");
+    console.log(req.body);
+    next();
+})
 app.get('/', function(req, res) {
     res.send('<h1>hello guys</h1>')
 })
 app.post('/', function(req, res) {
     console.log(req.body);
     res.send('hello world')
+})
+app.put('/', function(req, res) {
+    console.log(req.body);
+    res.send('put')
 })
 app.delete('/', function(req, res) {
     res.send('delete working')

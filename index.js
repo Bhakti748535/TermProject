@@ -24,6 +24,7 @@ app.get('/', function(req, res) {
     res.send('<h1>hello guys</h1>')
 })
 app.post('/', function(req, res) {
+    console.log(req.body);
     res.send('hello world')
 })
 app.delete('/', function(req, res) {

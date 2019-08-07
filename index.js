@@ -15,9 +15,15 @@ const site = http.createServer(function(req, res) {
 site.listen(3000);*/
 
 
-var express = require('express')
+var express = require('express');
 var app = express();
 app.get('/', function(req, res) {
-    res.send('hello guys')
+    res.send('<h1>hello guys</h1>')
 })
-app.listen(3000)
+app.post('/', function(req, res) {
+    res.send('hello world')
+})
+app.delete('/', function(req, res) {
+    res.send('delete working')
+});
+app.listen(3000);
